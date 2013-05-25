@@ -23,6 +23,10 @@
 		5B23D8341750ECA5001DA9F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B23D80F1750ECA5001DA9F3 /* Foundation.framework */; };
 		5B23D83C1750ECA5001DA9F3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B23D83A1750ECA5001DA9F3 /* InfoPlist.strings */; };
 		5B23D83F1750ECA5001DA9F3 /* SIStoreExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B23D83E1750ECA5001DA9F3 /* SIStoreExampleTests.m */; };
+		5B23D84C1750ECE6001DA9F3 /* SIStore.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5B23D8491750ECE6001DA9F3 /* SIStore.bundle */; };
+		5B23D84D1750ECE6001DA9F3 /* SIStore.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5B23D8491750ECE6001DA9F3 /* SIStore.bundle */; };
+		5B23D84E1750ECE6001DA9F3 /* SIStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B23D84B1750ECE6001DA9F3 /* SIStore.m */; };
+		5B23D84F1750ECE6001DA9F3 /* SIStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B23D84B1750ECE6001DA9F3 /* SIStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +62,9 @@
 		5B23D83B1750ECA5001DA9F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5B23D83D1750ECA5001DA9F3 /* SIStoreExampleTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIStoreExampleTests.h; sourceTree = "<group>"; };
 		5B23D83E1750ECA5001DA9F3 /* SIStoreExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIStoreExampleTests.m; sourceTree = "<group>"; };
+		5B23D8491750ECE6001DA9F3 /* SIStore.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SIStore.bundle; sourceTree = "<group>"; };
+		5B23D84A1750ECE6001DA9F3 /* SIStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIStore.h; sourceTree = "<group>"; };
+		5B23D84B1750ECE6001DA9F3 /* SIStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +124,7 @@
 		5B23D8131750ECA5001DA9F3 /* SIStoreExample */ = {
 			isa = PBXGroup;
 			children = (
+				5B23D8481750ECE6001DA9F3 /* SIStore */,
 				5B23D81C1750ECA5001DA9F3 /* AppDelegate.h */,
 				5B23D81D1750ECA5001DA9F3 /* AppDelegate.m */,
 				5B23D8251750ECA5001DA9F3 /* MainStoryboard.storyboard */,
@@ -159,6 +167,16 @@
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
+		};
+		5B23D8481750ECE6001DA9F3 /* SIStore */ = {
+			isa = PBXGroup;
+			children = (
+				5B23D8491750ECE6001DA9F3 /* SIStore.bundle */,
+				5B23D84A1750ECE6001DA9F3 /* SIStore.h */,
+				5B23D84B1750ECE6001DA9F3 /* SIStore.m */,
+			);
+			path = SIStore;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -236,6 +254,7 @@
 				5B23D8221750ECA5001DA9F3 /* Default@2x.png in Resources */,
 				5B23D8241750ECA5001DA9F3 /* Default-568h@2x.png in Resources */,
 				5B23D8271750ECA5001DA9F3 /* MainStoryboard.storyboard in Resources */,
+				5B23D84C1750ECE6001DA9F3 /* SIStore.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B23D83C1750ECA5001DA9F3 /* InfoPlist.strings in Resources */,
+				5B23D84D1750ECE6001DA9F3 /* SIStore.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +293,7 @@
 				5B23D81A1750ECA5001DA9F3 /* main.m in Sources */,
 				5B23D81E1750ECA5001DA9F3 /* AppDelegate.m in Sources */,
 				5B23D82A1750ECA5001DA9F3 /* ViewController.m in Sources */,
+				5B23D84E1750ECE6001DA9F3 /* SIStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B23D83F1750ECA5001DA9F3 /* SIStoreExampleTests.m in Sources */,
+				5B23D84F1750ECE6001DA9F3 /* SIStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
