@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		5B23D8541751057E001DA9F3 /* mogenerator */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 5B23D8551751057E001DA9F3 /* Build configuration list for PBXAggregateTarget "mogenerator" */;
+			buildPhases = (
+				5B23D85817510584001DA9F3 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = mogenerator;
+			productName = mogenerator;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		5B23D80E1750ECA5001DA9F3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B23D80D1750ECA5001DA9F3 /* UIKit.framework */; };
 		5B23D8101750ECA5001DA9F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B23D80F1750ECA5001DA9F3 /* Foundation.framework */; };
@@ -25,8 +39,15 @@
 		5B23D83F1750ECA5001DA9F3 /* SIStoreExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B23D83E1750ECA5001DA9F3 /* SIStoreExampleTests.m */; };
 		5B23D84C1750ECE6001DA9F3 /* SIStore.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5B23D8491750ECE6001DA9F3 /* SIStore.bundle */; };
 		5B23D84D1750ECE6001DA9F3 /* SIStore.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5B23D8491750ECE6001DA9F3 /* SIStore.bundle */; };
-		5B23D84E1750ECE6001DA9F3 /* SIStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B23D84B1750ECE6001DA9F3 /* SIStore.m */; };
-		5B23D84F1750ECE6001DA9F3 /* SIStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B23D84B1750ECE6001DA9F3 /* SIStore.m */; };
+		5B23D8531751029D001DA9F3 /* TaskBox.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5B23D8511751029D001DA9F3 /* TaskBox.xcdatamodeld */; };
+		5B23D85C175106D3001DA9F3 /* _Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B23D85B175106D3001DA9F3 /* _Task.m */; };
+		5B23D860175106EE001DA9F3 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B23D85F175106EE001DA9F3 /* Task.m */; };
+		5B23D86217510A63001DA9F3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B23D86117510A63001DA9F3 /* CoreData.framework */; };
+		5B23D86317510EF2001DA9F3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B23D86117510A63001DA9F3 /* CoreData.framework */; };
+		5B23D86517510EF9001DA9F3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B23D86417510EF9001DA9F3 /* libPods.a */; };
+		5B23D86817510F89001DA9F3 /* SITestStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B23D86717510F89001DA9F3 /* SITestStore.m */; };
+		5B23D86B1751235F001DA9F3 /* SIStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B23D86A1751235F001DA9F3 /* SIStore.m */; };
+		EA49BC5169A7479193A135F7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D651E741E1974814BD5FA1FB /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,8 +84,19 @@
 		5B23D83D1750ECA5001DA9F3 /* SIStoreExampleTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIStoreExampleTests.h; sourceTree = "<group>"; };
 		5B23D83E1750ECA5001DA9F3 /* SIStoreExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIStoreExampleTests.m; sourceTree = "<group>"; };
 		5B23D8491750ECE6001DA9F3 /* SIStore.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SIStore.bundle; sourceTree = "<group>"; };
-		5B23D84A1750ECE6001DA9F3 /* SIStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIStore.h; sourceTree = "<group>"; };
-		5B23D84B1750ECE6001DA9F3 /* SIStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIStore.m; sourceTree = "<group>"; };
+		5B23D8521751029D001DA9F3 /* TaskBox.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskBox.xcdatamodel; sourceTree = "<group>"; };
+		5B23D85A175106D3001DA9F3 /* _Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Task.h; sourceTree = "<group>"; };
+		5B23D85B175106D3001DA9F3 /* _Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Task.m; sourceTree = "<group>"; };
+		5B23D85E175106EE001DA9F3 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		5B23D85F175106EE001DA9F3 /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
+		5B23D86117510A63001DA9F3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		5B23D86417510EF9001DA9F3 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "../Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		5B23D86617510F89001DA9F3 /* SITestStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SITestStore.h; sourceTree = "<group>"; };
+		5B23D86717510F89001DA9F3 /* SITestStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SITestStore.m; sourceTree = "<group>"; };
+		5B23D8691751235F001DA9F3 /* SIStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIStore.h; sourceTree = "<group>"; };
+		5B23D86A1751235F001DA9F3 /* SIStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIStore.m; sourceTree = "<group>"; };
+		CAA35CFA8F404C01A3B345E2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		D651E741E1974814BD5FA1FB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,9 +104,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B23D86217510A63001DA9F3 /* CoreData.framework in Frameworks */,
 				5B23D80E1750ECA5001DA9F3 /* UIKit.framework in Frameworks */,
 				5B23D8101750ECA5001DA9F3 /* Foundation.framework in Frameworks */,
 				5B23D8121750ECA5001DA9F3 /* CoreGraphics.framework in Frameworks */,
+				EA49BC5169A7479193A135F7 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +116,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B23D86517510EF9001DA9F3 /* libPods.a in Frameworks */,
+				5B23D86317510EF2001DA9F3 /* CoreData.framework in Frameworks */,
 				5B23D8321750ECA5001DA9F3 /* SenTestingKit.framework in Frameworks */,
 				5B23D8331750ECA5001DA9F3 /* UIKit.framework in Frameworks */,
 				5B23D8341750ECA5001DA9F3 /* Foundation.framework in Frameworks */,
@@ -94,10 +130,12 @@
 		5B23D8011750ECA5001DA9F3 = {
 			isa = PBXGroup;
 			children = (
+				5B23D8481750ECE6001DA9F3 /* SIStore */,
 				5B23D8131750ECA5001DA9F3 /* SIStoreExample */,
 				5B23D8371750ECA5001DA9F3 /* SIStoreExampleTests */,
 				5B23D80C1750ECA5001DA9F3 /* Frameworks */,
 				5B23D80B1750ECA5001DA9F3 /* Products */,
+				CAA35CFA8F404C01A3B345E2 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,10 +151,12 @@
 		5B23D80C1750ECA5001DA9F3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5B23D86117510A63001DA9F3 /* CoreData.framework */,
 				5B23D80D1750ECA5001DA9F3 /* UIKit.framework */,
 				5B23D80F1750ECA5001DA9F3 /* Foundation.framework */,
 				5B23D8111750ECA5001DA9F3 /* CoreGraphics.framework */,
 				5B23D8311750ECA5001DA9F3 /* SenTestingKit.framework */,
+				D651E741E1974814BD5FA1FB /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -124,7 +164,7 @@
 		5B23D8131750ECA5001DA9F3 /* SIStoreExample */ = {
 			isa = PBXGroup;
 			children = (
-				5B23D8481750ECE6001DA9F3 /* SIStore */,
+				5B23D8501751008A001DA9F3 /* Models */,
 				5B23D81C1750ECA5001DA9F3 /* AppDelegate.h */,
 				5B23D81D1750ECA5001DA9F3 /* AppDelegate.m */,
 				5B23D8251750ECA5001DA9F3 /* MainStoryboard.storyboard */,
@@ -152,6 +192,8 @@
 		5B23D8371750ECA5001DA9F3 /* SIStoreExampleTests */ = {
 			isa = PBXGroup;
 			children = (
+				5B23D86617510F89001DA9F3 /* SITestStore.h */,
+				5B23D86717510F89001DA9F3 /* SITestStore.m */,
 				5B23D83D1750ECA5001DA9F3 /* SIStoreExampleTests.h */,
 				5B23D83E1750ECA5001DA9F3 /* SIStoreExampleTests.m */,
 				5B23D8381750ECA5001DA9F3 /* Supporting Files */,
@@ -162,6 +204,7 @@
 		5B23D8381750ECA5001DA9F3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5B23D86417510EF9001DA9F3 /* libPods.a */,
 				5B23D8391750ECA5001DA9F3 /* SIStoreExampleTests-Info.plist */,
 				5B23D83A1750ECA5001DA9F3 /* InfoPlist.strings */,
 			);
@@ -171,12 +214,40 @@
 		5B23D8481750ECE6001DA9F3 /* SIStore */ = {
 			isa = PBXGroup;
 			children = (
+				5B23D8691751235F001DA9F3 /* SIStore.h */,
+				5B23D86A1751235F001DA9F3 /* SIStore.m */,
 				5B23D8491750ECE6001DA9F3 /* SIStore.bundle */,
-				5B23D84A1750ECE6001DA9F3 /* SIStore.h */,
-				5B23D84B1750ECE6001DA9F3 /* SIStore.m */,
 			);
 			path = SIStore;
 			sourceTree = SOURCE_ROOT;
+		};
+		5B23D8501751008A001DA9F3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5B23D859175106C8001DA9F3 /* Base */,
+				5B23D85D175106E0001DA9F3 /* Classes */,
+				5B23D8511751029D001DA9F3 /* TaskBox.xcdatamodeld */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		5B23D859175106C8001DA9F3 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				5B23D85A175106D3001DA9F3 /* _Task.h */,
+				5B23D85B175106D3001DA9F3 /* _Task.m */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		5B23D85D175106E0001DA9F3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5B23D85E175106EE001DA9F3 /* Task.h */,
+				5B23D85F175106EE001DA9F3 /* Task.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -185,9 +256,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B23D8421750ECA5001DA9F3 /* Build configuration list for PBXNativeTarget "SIStoreExample" */;
 			buildPhases = (
+				158933C00EA445B4A36A51BC /* Check Pods Manifest.lock */,
 				5B23D8061750ECA5001DA9F3 /* Sources */,
 				5B23D8071750ECA5001DA9F3 /* Frameworks */,
 				5B23D8081750ECA5001DA9F3 /* Resources */,
+				7639BE3B1573478780B8B2DA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -240,6 +313,7 @@
 			targets = (
 				5B23D8091750ECA5001DA9F3 /* SIStoreExample */,
 				5B23D82F1750ECA5001DA9F3 /* SIStoreExampleTests */,
+				5B23D8541751057E001DA9F3 /* mogenerator */,
 			);
 		};
 /* End PBXProject section */
@@ -270,6 +344,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		158933C00EA445B4A36A51BC /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
 		5B23D82E1750ECA5001DA9F3 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -283,6 +371,33 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
+		5B23D85817510584001DA9F3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd SIStoreExample\nexport PATH=\"/usr/local/Cellar/mogenerator/1.27/bin:$PATH\"\npwd\nmogenerator -m \"TaskBox.xcdatamodeld/TaskBox.xcdatamodel\" --template-var arc=YES";
+		};
+		7639BE3B1573478780B8B2DA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -293,7 +408,10 @@
 				5B23D81A1750ECA5001DA9F3 /* main.m in Sources */,
 				5B23D81E1750ECA5001DA9F3 /* AppDelegate.m in Sources */,
 				5B23D82A1750ECA5001DA9F3 /* ViewController.m in Sources */,
-				5B23D84E1750ECE6001DA9F3 /* SIStore.m in Sources */,
+				5B23D8531751029D001DA9F3 /* TaskBox.xcdatamodeld in Sources */,
+				5B23D85C175106D3001DA9F3 /* _Task.m in Sources */,
+				5B23D860175106EE001DA9F3 /* Task.m in Sources */,
+				5B23D86B1751235F001DA9F3 /* SIStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,7 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B23D83F1750ECA5001DA9F3 /* SIStoreExampleTests.m in Sources */,
-				5B23D84F1750ECE6001DA9F3 /* SIStore.m in Sources */,
+				5B23D86817510F89001DA9F3 /* SITestStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +520,7 @@
 		};
 		5B23D8431750ECA5001DA9F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAA35CFA8F404C01A3B345E2 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SIStoreExample/SIStoreExample-Prefix.pch";
@@ -413,6 +532,7 @@
 		};
 		5B23D8441750ECA5001DA9F3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAA35CFA8F404C01A3B345E2 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SIStoreExample/SIStoreExample-Prefix.pch";
@@ -432,9 +552,15 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SIStoreExample/SIStoreExample-Prefix.pch";
+				HEADER_SEARCH_PATHS = "${PODS_HEADERS_SEARCH_PATHS}";
 				INFOPLIST_FILE = "SIStoreExampleTests/SIStoreExampleTests-Info.plist";
+				PODS_BUILD_HEADERS_SEARCH_PATHS = "\"${PODS_ROOT}/BuildHeaders\" \"${PODS_ROOT}/BuildHeaders/MagicalRecord\" \"${PODS_ROOT}/BuildHeaders/SIAlertView\" \"${PODS_ROOT}/BuildHeaders/SVProgressHUD\"";
+				PODS_HEADERS_SEARCH_PATHS = "${PODS_PUBLIC_HEADERS_SEARCH_PATHS}";
+				PODS_PUBLIC_HEADERS_SEARCH_PATHS = "\"${PODS_ROOT}/Headers\" \"${PODS_ROOT}/Headers/MagicalRecord\" \"${PODS_ROOT}/Headers/SIAlertView\" \"${PODS_ROOT}/Headers/SVProgressHUD\"";
+				PODS_ROOT = "${SRCROOT}/Pods";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -449,10 +575,30 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SIStoreExample/SIStoreExample-Prefix.pch";
+				HEADER_SEARCH_PATHS = "${PODS_HEADERS_SEARCH_PATHS}";
 				INFOPLIST_FILE = "SIStoreExampleTests/SIStoreExampleTests-Info.plist";
+				PODS_BUILD_HEADERS_SEARCH_PATHS = "\"${PODS_ROOT}/BuildHeaders\" \"${PODS_ROOT}/BuildHeaders/MagicalRecord\" \"${PODS_ROOT}/BuildHeaders/SIAlertView\" \"${PODS_ROOT}/BuildHeaders/SVProgressHUD\"";
+				PODS_HEADERS_SEARCH_PATHS = "${PODS_PUBLIC_HEADERS_SEARCH_PATHS}";
+				PODS_PUBLIC_HEADERS_SEARCH_PATHS = "\"${PODS_ROOT}/Headers\" \"${PODS_ROOT}/Headers/MagicalRecord\" \"${PODS_ROOT}/Headers/SIAlertView\" \"${PODS_ROOT}/Headers/SVProgressHUD\"";
+				PODS_ROOT = "${SRCROOT}/Pods";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		5B23D8561751057E001DA9F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5B23D8571751057E001DA9F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -475,6 +621,7 @@
 				5B23D8441750ECA5001DA9F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5B23D8451750ECA5001DA9F3 /* Build configuration list for PBXNativeTarget "SIStoreExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -483,8 +630,31 @@
 				5B23D8471750ECA5001DA9F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B23D8551751057E001DA9F3 /* Build configuration list for PBXAggregateTarget "mogenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B23D8561751057E001DA9F3 /* Debug */,
+				5B23D8571751057E001DA9F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5B23D8511751029D001DA9F3 /* TaskBox.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5B23D8521751029D001DA9F3 /* TaskBox.xcdatamodel */,
+			);
+			currentVersion = 5B23D8521751029D001DA9F3 /* TaskBox.xcdatamodel */;
+			path = TaskBox.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5B23D8021750ECA5001DA9F3 /* Project object */;
 }

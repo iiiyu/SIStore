@@ -6,7 +6,8 @@
 //
 
 #import "SIStore.h"
-#import "SIAlertView.h"
+#import <SIAlertView.h>
+#import <CoreData+MagicalRecord.h>
 
 NSString *const SIDefaultStoreFileName = @"CoreDataStore";
 NSString *const SIUseLocalStoreKey = @"SIUseLocalStoreKey";
