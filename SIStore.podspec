@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.source_files = 'SIStore/*.{h,m}'
   s.resources    = 'SIStore/SIStore.bundle'
   s.framework    = 'CoreData'
-  s.dependency 'MagicalRecord', :git => 'git://github.com/iiiyu/MagicalRecord.git', :commit => '7968aa04523eaafc33fea64d15e221146d9a7073'
+  s.dependency 'MagicalRecord'
   s.dependency 'SVProgressHUD'
   s.dependency 'SIAlertView'
   s.requires_arc = true
