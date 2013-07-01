@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AppTest.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>SIStoreExample.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -28,6 +33,11 @@
 			<true/>
 		</dict>
 		<key>5B23D8541751057E001DA9F3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5BFF1F6817537BCB00329D2B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
