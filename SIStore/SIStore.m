@@ -255,7 +255,8 @@ BOOL __readonlyModeEnabled = NO;
                         });
                     });
                 } else {
-                    NSLog(@"Can't migrate Local to iCloud.");
+                    NSLog(@"Can't migrate Local to iCloud. Error: iCloud error.");
+                    migrateCompletion();
                 }
             } else {
                 migrateCompletion();
