@@ -48,9 +48,12 @@
 		5B23D86517510EF9001DA9F3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B23D86417510EF9001DA9F3 /* libPods.a */; };
 		5B23D86817510F89001DA9F3 /* SITestStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B23D86717510F89001DA9F3 /* SITestStore.m */; };
 		5B23D86B1751235F001DA9F3 /* SIStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B23D86A1751235F001DA9F3 /* SIStore.m */; };
+		5B3292D417866B6000538F0C /* StartupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3292D317866B6000538F0C /* StartupViewController.m */; };
 		5BED8E321782CEA1003C4850 /* StoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BED8E311782CEA1003C4850 /* StoreTableViewController.m */; };
 		5BED8E351782CFAF003C4850 /* TBStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BED8E341782CFAF003C4850 /* TBStore.m */; };
 		5BED8E381782D062003C4850 /* UseiCloudViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BED8E371782D062003C4850 /* UseiCloudViewController.m */; };
+		5BFBEFC917895ED000D6AC29 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BFBEFC817895ED000D6AC29 /* SettingViewController.m */; };
+		5BFBEFCC17895EFF00D6AC29 /* AddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BFBEFCB17895EFF00D6AC29 /* AddTaskViewController.m */; };
 		5BFF1F6A17537BCB00329D2B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B23D80D1750ECA5001DA9F3 /* UIKit.framework */; };
 		5BFF1F6B17537BCB00329D2B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B23D80F1750ECA5001DA9F3 /* Foundation.framework */; };
 		5BFF1F6C17537BCB00329D2B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B23D8111750ECA5001DA9F3 /* CoreGraphics.framework */; };
@@ -109,6 +112,10 @@
 		5B23D86717510F89001DA9F3 /* SITestStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SITestStore.m; sourceTree = "<group>"; };
 		5B23D8691751235F001DA9F3 /* SIStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIStore.h; sourceTree = "<group>"; };
 		5B23D86A1751235F001DA9F3 /* SIStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIStore.m; sourceTree = "<group>"; };
+		5B3292D217866B6000538F0C /* StartupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartupViewController.h; sourceTree = "<group>"; };
+		5B3292D317866B6000538F0C /* StartupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartupViewController.m; sourceTree = "<group>"; };
+		5B3292D517866EDE00538F0C /* SIDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIDefines.h; sourceTree = "<group>"; };
+		5BCA4AF9178426BB005DC1AF /* SIStoreExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SIStoreExample.entitlements; sourceTree = "<group>"; };
 		5BED8E2E1782B610003C4850 /* AppTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AppTest.entitlements; sourceTree = "<group>"; };
 		5BED8E301782CEA1003C4850 /* StoreTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreTableViewController.h; sourceTree = "<group>"; };
 		5BED8E311782CEA1003C4850 /* StoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreTableViewController.m; sourceTree = "<group>"; };
@@ -116,6 +123,10 @@
 		5BED8E341782CFAF003C4850 /* TBStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBStore.m; sourceTree = "<group>"; };
 		5BED8E361782D062003C4850 /* UseiCloudViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UseiCloudViewController.h; sourceTree = "<group>"; };
 		5BED8E371782D062003C4850 /* UseiCloudViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UseiCloudViewController.m; sourceTree = "<group>"; };
+		5BFBEFC717895ECF00D6AC29 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		5BFBEFC817895ED000D6AC29 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		5BFBEFCA17895EFF00D6AC29 /* AddTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTaskViewController.h; sourceTree = "<group>"; };
+		5BFBEFCB17895EFF00D6AC29 /* AddTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTaskViewController.m; sourceTree = "<group>"; };
 		5BFF1F6917537BCB00329D2B /* AppTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BFF1F6F17537BCB00329D2B /* AppTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AppTest-Info.plist"; sourceTree = "<group>"; };
 		5BFF1F7117537BCB00329D2B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -214,6 +225,7 @@
 				5B23D8501751008A001DA9F3 /* Models */,
 				5B23D81C1750ECA5001DA9F3 /* AppDelegate.h */,
 				5B23D81D1750ECA5001DA9F3 /* AppDelegate.m */,
+				5B3292D517866EDE00538F0C /* SIDefines.h */,
 				5B23D8251750ECA5001DA9F3 /* MainStoryboard.storyboard */,
 				5BED8E2F1782CE7B003C4850 /* Controller */,
 				5B23D8141750ECA5001DA9F3 /* Supporting Files */,
@@ -224,6 +236,7 @@
 		5B23D8141750ECA5001DA9F3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5BCA4AF9178426BB005DC1AF /* SIStoreExample.entitlements */,
 				5B23D8151750ECA5001DA9F3 /* SIStoreExample-Info.plist */,
 				5B23D8161750ECA5001DA9F3 /* InfoPlist.strings */,
 				5B23D8191750ECA5001DA9F3 /* main.m */,
@@ -306,6 +319,12 @@
 				5BED8E311782CEA1003C4850 /* StoreTableViewController.m */,
 				5BED8E361782D062003C4850 /* UseiCloudViewController.h */,
 				5BED8E371782D062003C4850 /* UseiCloudViewController.m */,
+				5B3292D217866B6000538F0C /* StartupViewController.h */,
+				5B3292D317866B6000538F0C /* StartupViewController.m */,
+				5BFBEFC717895ECF00D6AC29 /* SettingViewController.h */,
+				5BFBEFC817895ED000D6AC29 /* SettingViewController.m */,
+				5BFBEFCA17895EFF00D6AC29 /* AddTaskViewController.h */,
+				5BFBEFCB17895EFF00D6AC29 /* AddTaskViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -560,6 +579,9 @@
 				5BED8E321782CEA1003C4850 /* StoreTableViewController.m in Sources */,
 				5BED8E351782CFAF003C4850 /* TBStore.m in Sources */,
 				5BED8E381782D062003C4850 /* UseiCloudViewController.m in Sources */,
+				5B3292D417866B6000538F0C /* StartupViewController.m in Sources */,
+				5BFBEFC917895ED000D6AC29 /* SettingViewController.m in Sources */,
+				5BFBEFCC17895EFF00D6AC29 /* AddTaskViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,6 +709,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CAA35CFA8F404C01A3B345E2 /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SIStoreExample/SIStoreExample.entitlements;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SIStoreExample/SIStoreExample-Prefix.pch";
 				INFOPLIST_FILE = "SIStoreExample/SIStoreExample-Info.plist";
@@ -699,6 +722,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CAA35CFA8F404C01A3B345E2 /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SIStoreExample/SIStoreExample.entitlements;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SIStoreExample/SIStoreExample-Prefix.pch";
 				INFOPLIST_FILE = "SIStoreExample/SIStoreExample-Info.plist";

@@ -10,4 +10,9 @@
 
 @interface StoreTableViewController : UITableViewController
 
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+
+
+@property (nonatomic) BOOL suspendAutomaticTrackingOfChangesInManagedObjectContext;
+
 @end

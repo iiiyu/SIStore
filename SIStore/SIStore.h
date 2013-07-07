@@ -46,6 +46,9 @@ typedef NS_ENUM(NSUInteger, SIStoreFallbackPolicy) {
 + (void)switchStore:(BOOL)useLocalStore completion:(void (^)(void))completion;
 + (void)migrateStore:(BOOL)useLocalStore completion:(void (^)(void))completion;
 
++ (void)setupBothStoreLocalStoreCompletion:(void (^)(void))localStoreCompletion
+                  andICLoudStoreCompletion:(void (^)(void))iCloudStoreCompletion;
+
 // override
 + (BOOL)seedStore:(NSPersistentStore *)store withPersistentStoreAtURL:(NSURL *)seedStoreURL error:(NSError * __autoreleasing *)error;
 + (void)deDupe;

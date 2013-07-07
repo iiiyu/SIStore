@@ -171,6 +171,59 @@ BOOL __readonlyModeEnabled = NO;
 											  }];
 }
 
++ (void)setupBothStoreLocalStoreCompletion:(void (^)(void))localStoreCompletion
+                     andICLoudStoreCompletion:(void (^)(void))iCloudStoreCompletion
+{
+
+    // setp 1 准备NSManagedObjectModel
+
+    // setp 2 准备NSPersistentStoreCoordinator
+
+    // setp 3 准备NSManagedObjectContext
+    
+    [self cleanUpIfNecessary];
+    
+    [self setICloudStoreState:SIICloudStoreStateUnknown];
+    
+    __block NSPersistentStoreCoordinator *iCloudCoordinator = [NSPersistentStoreCoordinator MR_coordinatorWithiCloudContainerID:nil
+                                                                                                           contentNameKey:[self iCloudContentNameKey]
+                                                                                                          localStoreNamed:[self iCloudStoreName]
+                                                                                                  cloudStorePathComponent:@"Logs"
+                                                                                                               completion:^{
+                                                                                                                   [self handleICloudResultWithCompletion:iCloudStoreCompletion];
+
+                                                                                                                   NSLog(@"########coordinator:%@", iCloudCoordinator);
+                                                                                                                   
+                                                                                                                   [[NSManagedObjectContext MR_defaultContext] MR_saveOnlySelfAndWait];
+                                                                                                                   // 合并本地数据到iCloud上
+                                                                                                                   
+                                                                                                                   // 删除本地数据
+                                                                                                                   [self cleanUpIfNecessary];
+                                                                                                                   
+                                                                                                                   NSLog(@"切换PSC为iCloud");
+                                                                                                                   
+                                                                                                                   [NSPersistentStoreCoordinator MR_setDefaultStoreCoordinator:iCloudCoordinator];
+                                                                                                                   [NSManagedObjectContext MR_initializeDefaultContextWithCoordinator:iCloudCoordinator];
+                                                                                                               }];
+    
+    
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+	dispatch_async(queue, ^{
+		[MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:[MagicalRecord defaultStoreName]];
+        if (!__isMigrating && [[NSUserDefaults standardUserDefaults] boolForKey:SINeedDeDupeKey]) {
+            [self deDupe];
+            [[NSUserDefaults standardUserDefaults] setBool:NO forKey:SINeedDeDupeKey];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }
+		dispatch_sync(dispatch_get_main_queue(), ^{
+			if (localStoreCompletion) {
+				localStoreCompletion();
+			}
+            [[NSNotificationCenter defaultCenter] postNotificationName:SISetupDidFinishNotification object:self];
+		});
+	});
+}
+
 + (void)switchStore:(BOOL)useLocalStore completion:(void (^)(void))completion
 {
 	if (useLocalStore) {

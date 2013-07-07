@@ -8,11 +8,26 @@
 
 #import "AppDelegate.h"
 
+#import "SIStore.h"
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+//    [SIStore setupBothStoreLocalStoreCompletion:^{
+//        NSLog(@"12");
+//    } andICLoudStoreCompletion:^{
+//        NSLog(@"34");
+//    }];
+    
+//    [SIStore setupICloudStoreCompletion:^{
+//        NSLog(@"icloud");
+//    }];
+//    
+//    [SIStore setupLocalStoreCompletion:^{
+//        NSLog(@"local");
+//    }];
     return YES;
 }
 							

@@ -7,31 +7,29 @@
 //
 
 #import "StoreTableViewController.h"
+#import <CoreData/CoreData.h>
+#import <CoreData+MagicalRecord.h>
+#import "AddTaskViewController.h"
+#import "ViewController.h"
+#import "Task.h"
 
-@interface StoreTableViewController ()
+@interface StoreTableViewController ()<NSFetchedResultsControllerDelegate, AddTaskViewControllerDelegate>
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic) BOOL beganUpdates;
+@property (strong, nonatomic) NSIndexPath *selectIndex;
+//@property (strong, nonatomic) Task *selectTask;
 
 @end
 
 @implementation StoreTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+//    if (!self.selectIndex) {
+//        self.selectIndex = [[NSIndexPath alloc] init];
+//    }
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,82 +38,190 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+#pragma mark - Init Mehtods
+
+- (NSFetchedResultsController *)fetchedResultsController
+{
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
+    }
+//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"position > 0"];
+//    _fetchedResultsController = [Task MR_fetchAllSortedBy:@"createAt" ascending:YES withPredicate:predicate groupBy:nil delegate:self];
+    _fetchedResultsController = [Task MR_fetchAllSortedBy:@"createAt" ascending:YES withPredicate:nil groupBy:nil delegate:self];
+    return _fetchedResultsController;
+}
+
+
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-//#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 1;
+    return [[self.fetchedResultsController sections] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return [[[self.fetchedResultsController sections] objectAtIndex:section] numberOfObjects];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [[[self.fetchedResultsController sections] objectAtIndex:section] name];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
+{
+	return [self.fetchedResultsController sectionForSectionIndexTitle:title atIndex:index];
+}
+
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    return [self.fetchedResultsController sectionIndexTitles];
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+//    self.selectTask = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    self.selectIndex = indexPath;
+    [self performSegueWithIdentifier:@"Show Task Detail" sender:nil];
+}
+
+#pragma mark - NSFetchedResultsControllerDelegate
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
+{
+    if (!self.suspendAutomaticTrackingOfChangesInManagedObjectContext) {
+        [self.tableView beginUpdates];
+        self.beganUpdates = YES;
+    }
+}
+
+- (void)controller:(NSFetchedResultsController *)controller
+  didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
+		   atIndex:(NSUInteger)sectionIndex
+	 forChangeType:(NSFetchedResultsChangeType)type
+{
+    if (!self.suspendAutomaticTrackingOfChangesInManagedObjectContext)
+    {
+        switch(type)
+        {
+            case NSFetchedResultsChangeInsert:
+                [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+                break;
+                
+            case NSFetchedResultsChangeDelete:
+                [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+                break;
+        }
+    }
+}
+
+
+- (void)controller:(NSFetchedResultsController *)controller
+   didChangeObject:(id)anObject
+	   atIndexPath:(NSIndexPath *)indexPath
+	 forChangeType:(NSFetchedResultsChangeType)type
+	  newIndexPath:(NSIndexPath *)newIndexPath
+{
+    if (!self.suspendAutomaticTrackingOfChangesInManagedObjectContext)
+    {
+        switch(type)
+        {
+            case NSFetchedResultsChangeInsert:
+                [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+                break;
+                
+            case NSFetchedResultsChangeDelete:
+                [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+                break;
+                
+            case NSFetchedResultsChangeUpdate:
+                [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+                break;
+                
+            case NSFetchedResultsChangeMove:
+                [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+                [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+                break;
+        }
+    }
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+{
+    if (self.beganUpdates) [self.tableView endUpdates];
+}
+
+- (void)endSuspensionOfUpdatesDueToContextChanges
+{
+    self.suspendAutomaticTrackingOfChangesInManagedObjectContext = NO;
+}
+
+- (void)setSuspendAutomaticTrackingOfChangesInManagedObjectContext:(BOOL)suspend
+{
+    if (suspend) {
+        self.suspendAutomaticTrackingOfChangesInManagedObjectContext = YES;
+    } else {
+        [self performSelector:@selector(endSuspensionOfUpdatesDueToContextChanges) withObject:0 afterDelay:0];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
+
     // Configure the cell...
+    [self configureCell:cell atIndexPath:indexPath];
+
     
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = [[object valueForKey:@"content"] description];
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    if ([segue.identifier isEqualToString:@"Add Task Content"]) {
+        AddTaskViewController *viewController = segue.destinationViewController;
+        viewController.delegate = self;
+    }else if ([segue.identifier isEqualToString:@"Show Task Detail"]){
+        ViewController *viewController = segue.destinationViewController;
+        viewController.task = [self.fetchedResultsController objectAtIndexPath:self.selectIndex];
+//        viewController.task = self.selectTask;
+    }
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+
+-(void) addTaskViewControllerDidFinshed:(AddTaskViewController *)viewController
 {
+    Task *ttask = [Task MR_createEntity];
+    NSInteger count = [Task MR_countOfEntities];
+    ttask.position = @(count + 1);
+    ttask.createAt = [NSDate date];
+    ttask.updateAt = [NSDate date];
+    ttask.content = viewController.content;
+    
+    [[NSManagedObjectContext MR_defaultContext] MR_saveOnlySelfWithCompletion:^(BOOL success, NSError *error) {
+        [viewController dismissViewControllerAnimated:YES completion:nil];
+    }];
+
 }
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+- (IBAction)addTaskAction:(id)sender {
+    
+//    Task *tt = [Task MR_createEntity];
+//    NSInteger count = [Task MR_countOfEntities];
+//    tt.position = @(count + 1);
+//    tt.createAt = [NSDate date];
+//
+//    [[NSManagedObjectContext MR_defaultContext] MR_saveOnlySelfAndWait];
 }
 
 @end

@@ -8,6 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol UseiCloudViewControllerDelegate;
+
+
+
+
 @interface UseiCloudViewController : UIViewController
+
+@property (weak, nonatomic) id<UseiCloudViewControllerDelegate> delegate;
+@property (nonatomic, assign) BOOL isICloud;
+
+@end
+
+
+@protocol UseiCloudViewControllerDelegate <NSObject>
+
+@optional
+-(void)useiCloudViewControllerDidFinshed:(UseiCloudViewController *)viewController;
 
 @end
