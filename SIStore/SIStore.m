@@ -297,7 +297,21 @@ BOOL __readonlyModeEnabled = NO;
 
 + (NSURL *)iCloudStoreURL
 {
-	return [NSPersistentStore MR_urlForStoreName:[self iCloudStoreName]];
+    NSURL *result = nil;
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
+        NSString *appDocDir = [[[[NSFileManager defaultManager] URLsForDirectory: NSLibraryDirectory inDomains:NSUserDomainMask] lastObject] relativePath];
+        NSArray *arrayFiles = [[self class] arrayFilePathsWith:appDocDir];
+        for (NSString *filePath in arrayFiles) {
+            if ([[filePath lastPathComponent] isEqualToString:[self iCloudStoreName]]){
+                result = [NSURL fileURLWithPath:filePath];
+            }
+        }
+    }else{
+        result  = [NSPersistentStore MR_urlForStoreName:[self iCloudStoreName]];
+    }
+    
+    return result;
 }
 
 #pragma mark - Private
@@ -489,6 +503,25 @@ BOOL __readonlyModeEnabled = NO;
     }
     defaultString = [bundle localizedStringForKey:key value:defaultString table:nil];
     return [[NSBundle mainBundle] localizedStringForKey:key value:defaultString table:nil];
+}
+
++ (NSArray *)arrayFilePathsWith:(NSString *)documentPath
+{
+    NSMutableArray *result = [[NSMutableArray alloc] init];
+    NSError *error;
+    NSArray *tempArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:documentPath error:&error];
+    for (NSString *fileName in tempArray) {
+        NSString *fullPath = [documentPath stringByAppendingFormat:@"/%@",fileName];
+         BOOL isDir = NO;
+        if ([[NSFileManager defaultManager] fileExistsAtPath:fullPath isDirectory:&isDir]) {
+            if (isDir) {
+                [result addObjectsFromArray:[[self class] arrayFilePathsWith:fullPath]];
+            }else{
+                [result addObject:fullPath];
+            }
+        }
+    }
+    return result;
 }
 
 @end
