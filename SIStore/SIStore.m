@@ -204,7 +204,7 @@ BOOL __readonlyModeEnabled = NO;
         }
         [[NSNotificationCenter defaultCenter] postNotificationName:SIMigrateDidFinishNotification object:self];
     };
-
+    
     NSFileManager *fileManager = [[NSFileManager alloc] init];
     if(useLocalStore) {
         [self setupLocalStoreCompletion:^{
@@ -426,7 +426,7 @@ BOOL __readonlyModeEnabled = NO;
 + (void)alertError
 {
     SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:[self localizedStringForKey:SIICloudSyncFailedKey withDefault:@"iCloud Sync Failed"]
-                                                     andMessage:nil];
+                                                        message:nil];
     [alertView addButtonWithTitle:[self localizedStringForKey:SIICloudRetryKey withDefault:@"Retry"]
                              type:SIAlertViewButtonTypeDefault
                           handler:^(SIAlertView *alertView) {
@@ -451,7 +451,7 @@ BOOL __readonlyModeEnabled = NO;
 + (void)alertReadOnly
 {
     SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:[self localizedStringForKey:SIICloudIsUnavailableKey withDefault:@"iCloud is Unavailable"]
-                                                     andMessage:[self localizedStringForKey:SIICloudNeedEnableICloudKey withDefault:@"You need enable iCloud documents within system settings, or you can switch to local."]];
+                                                        message:[self localizedStringForKey:SIICloudNeedEnableICloudKey withDefault:@"You need enable iCloud documents within system settings, or you can switch to local."]];
     [alertView addButtonWithTitle:[self localizedStringForKey:SIICloudReadonlyModeKey withDefault:@"Readonly mode"]
                              type:SIAlertViewButtonTypeDefault
                           handler:^(SIAlertView *alertView) {
@@ -512,7 +512,7 @@ BOOL __readonlyModeEnabled = NO;
     NSArray *tempArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:documentPath error:&error];
     for (NSString *fileName in tempArray) {
         NSString *fullPath = [documentPath stringByAppendingFormat:@"/%@",fileName];
-         BOOL isDir = NO;
+        BOOL isDir = NO;
         if ([[NSFileManager defaultManager] fileExistsAtPath:fullPath isDirectory:&isDir]) {
             if (isDir) {
                 [result addObjectsFromArray:[[self class] arrayFilePathsWith:fullPath]];
